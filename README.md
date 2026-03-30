@@ -1,11 +1,11 @@
-# 🚀 Hackatón 1 – CS2031
+# 🚀 Hackatón 0 – CS2031
 
-¡Bienvenidos de vuelta! 🎉
-Después de la experiencia de la Hackatón 0, ya saben lo que se viene: colaboración bajo presión, conflictos de Git y trabajo en equipo real.
+¡Bienvenidos! 🎉
+Desde el curso **CS2031** les damos una cordial bienvenida al ciclo **2026-1**. El foco sigue siendo el mismo que siempre: colaboración bajo presión, conflictos de Git y trabajo en equipo real.
 
 ## 🤔 ¿Qué trae esta Hackatón?
 
-Esta **Hackatón 1** sube un poco la apuesta. Los equipos ahora son de **exactamente 3 integrantes** y el proyecto tiene más bugs intencionales para resolver. El foco sigue siendo el mismo:
+Esta **Hackatón 0** es una primera muestra del concepto de hackatones. Los equipos son de **exactamente 3 integrantes** y el proyecto tiene varios bugs intencionales para resolver. El foco es el mismo de siempre:
 
 > **Git + GitHub + HTML + CSS + trabajo en equipo**
 
@@ -37,7 +37,7 @@ Un TA (que no diremos quién 🤫) volvió a meter mano en el repositorio y romp
 
 ## 👑 Organización del equipo
 
-- Elijan un **líder de equipo** que cree el repositorio a partir de la plantilla `cs2031-2025-2-hackathon-1` (asegurándose de incluir **todas las ramas**).
+- Elijan un **líder de equipo** que cree el repositorio a partir de la plantilla `cs2031-2026-1-hackathon-0` (asegurándose de incluir **todas las ramas**).
 - El líder da acceso de colaborador a los otros 2 integrantes.
 - Cada integrante trabaja en **su propia rama** (`feat/member-nombre`) y abre un **PR** para que el líder lo revise y acepte.
 - Los conflictos se resuelven en equipo, **no individualmente**.
