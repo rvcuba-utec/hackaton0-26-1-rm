@@ -1,11 +1,11 @@
-# 🚀 Hackatón 1 – CS2031
+# 🚀 Hackatón 0 – CS2031
 
-¡Bienvenidos de vuelta! 🎉
-Después de la experiencia de la Hackatón 0, ya saben lo que se viene: colaboración bajo presión, conflictos de Git y trabajo en equipo real.
+¡Bienvenidos! 🎉
+Desde el curso **CS2031** les damos una cordial bienvenida al ciclo **2026-1**. El foco sigue siendo el mismo que siempre: colaboración bajo presión, conflictos de Git y trabajo en equipo real.
 
 ## 🤔 ¿Qué trae esta Hackatón?
 
-Esta **Hackatón 1** sube un poco la apuesta. Los equipos ahora son de **exactamente 3 integrantes** y el proyecto tiene más bugs intencionales para resolver. El foco sigue siendo el mismo:
+Esta **Hackatón 0** es una primera muestra del concepto de hackatones. Los equipos son de **exactamente 3 integrantes** y el proyecto tiene varios bugs intencionales para resolver. El foco es el mismo de siempre:
 
 > **Git + GitHub + HTML + CSS + trabajo en equipo**
 
@@ -23,7 +23,7 @@ Los equipos son de **3 integrantes fijos**. Cada uno tendrá un rol claro:
 - Otros que lideren 🧭
 - Y otros que ejecuten rápido ⚡
 
-Esta vez el proyecto tiene **más conflictos intencionales** que la vez anterior. Coordínense bien antes de empezar a pushear cambios.
+Coordínense bien antes de empezar a pushear cambios. El repositorio incluye **GitHub Actions** que corren automáticamente: una valida el HTML y los enlaces en cada PR, y otra despliega la página en GitHub Pages en cada push a `main`.
 
 ---
 
@@ -37,7 +37,7 @@ Un TA (que no diremos quién 🤫) volvió a meter mano en el repositorio y romp
 
 ## 👑 Organización del equipo
 
-- Elijan un **líder de equipo** que cree el repositorio a partir de la plantilla `cs2031-2025-2-hackathon-1` (asegurándose de incluir **todas las ramas**).
+- Elijan un **líder de equipo** que cree el repositorio a partir de la plantilla `cs2031-2026-1-hackathon-0` (asegurándose de incluir **todas las ramas**).
 - El líder da acceso de colaborador a los otros 2 integrantes.
 - Cada integrante trabaja en **su propia rama** (`feat/member-nombre`) y abre un **PR** para que el líder lo revise y acepte.
 - Los conflictos se resuelven en equipo, **no individualmente**.
@@ -118,26 +118,16 @@ Los 3 links del menú apuntan a IDs incorrectos:
 
 ---
 
-### #4 — Bug de CSS (1 PR)
-
-En `index.css`, en la **línea 2**, hay una regla suelta que sobreescribe el color del `h1`:
-
-```css
-/* BUG #4: esta regla sobreescribe el color correcto del h1 definido más abajo */
-h1 { color: purple; }
-```
-
-Esta regla hace que el título principal del hero se vea de color morado en lugar del color correcto (`var(--color-secondary)`). Debe eliminarse.
-
-**Rama sugerida:** `bugfix/h1-color`
-
----
-
 ### ✅ Publicado en GitHub Pages
 
-- Activar GitHub Pages desde la rama `main`.
-- Validar que el sitio cargue correctamente y compartir la URL.
-- Referencia: [Configurar GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+El deploy es **automático** gracias al workflow `.github/workflows/deploy.yml`. Cada push a `main` despliega la página sin configuración manual.
+
+Solo necesitan habilitarlo una vez en la configuración del repositorio:
+1. Ir a **Settings → Pages**
+2. En *Source* seleccionar **GitHub Actions**
+3. A partir de ahí, cada merge a `main` despliega automáticamente
+
+La URL del sitio aparece en la pestaña **Environments → github-pages** del repositorio.
 
 ---
 
@@ -183,9 +173,21 @@ La tarea del equipo es **resolver esto manualmente**, eliminando los marcadores 
 | `feat/member-nombre` | Cada integrante | Datos personales | 1 por persona |
 | `clean-css` | 1 integrante | CSS modular | 1 PR |
 | `navbar-fix` | 1 integrante | Corrección de enlaces | 1 PR |
-| `bugfix/h1-color` | 1 integrante | Bug de CSS | 1 PR |
 
-> El líder puede asignar las ramas `clean-css`, `navbar-fix` y `bugfix/h1-color` como tareas a distintos integrantes del equipo.
+> El líder puede asignar las ramas `clean-css`, `navbar-fix` como tareas a distintos integrantes del equipo.
+
+## ⚙️ GitHub Actions incluidas
+
+| Workflow | Archivo | Se ejecuta en |
+|---|---|---|
+| Validación HTML + links | `.github/workflows/validate.yml` | Cada PR hacia `main` |
+| Deploy a GitHub Pages | `.github/workflows/deploy.yml` | Cada push a `main` |
+
+**`validate.yml`** corre dos checks en cada PR:
+- Valida que el HTML sea correcto según el estándar W3C
+- Verifica que todos los `href="#..."` del HTML apunten a un `id` que realmente existe — el PR **no podrá mergearse** si el navbar tiene links rotos
+
+**`deploy.yml`** despliega automáticamente la página en GitHub Pages tras cada merge a `main` (TODO).
 
 ---
 
